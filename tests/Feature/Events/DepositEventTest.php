@@ -55,7 +55,7 @@ class DepositEventTest extends TestCase
             'amount' => 50,
         ];
 
-        $response = $this->postJson('/api/event', $data);
+        $response = $this->postJson('/event', $data);
 
         $response->assertStatus(201);
         $response->assertJson([
@@ -99,7 +99,7 @@ class DepositEventTest extends TestCase
             'amount' => 30
         ];
 
-        $response = $this->postJson('/api/event', $data);
+        $response = $this->postJson('/event', $data);
 
         $response->assertStatus(201);
         $response->assertJson([

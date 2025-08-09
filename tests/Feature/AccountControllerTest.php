@@ -36,7 +36,7 @@ class AccountControllerTest extends TestCase
 
         $this->app->instance(AccountRepository::class, $mockRepository);
 
-        $response = $this->post('/api/reset');
+        $response = $this->post('/reset');
 
         $response->assertStatus(200);
         $response->assertSeeText('OK');
@@ -60,7 +60,7 @@ class AccountControllerTest extends TestCase
 
         $this->app->instance(AccountRepository::class, $mockRepository);
 
-        $response = $this->get('/api/balance?account_id=100');
+        $response = $this->get('/balance?account_id=100');
 
         $response->assertStatus(200);
         $response->assertSeeText('50');
@@ -79,7 +79,7 @@ class AccountControllerTest extends TestCase
 
         $this->app->instance(AccountRepository::class, $mockRepository);
 
-        $response = $this->get('/api/balance?account_id=999');
+        $response = $this->get('/balance?account_id=999');
 
         $response->assertStatus(404);
         $response->assertSeeText('0');
